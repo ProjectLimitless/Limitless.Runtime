@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\APIRouteAttribute.cs" />
     <Compile Include="Interfaces\IAPIModule.cs" />
     <Compile Include="Interfaces\IModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
