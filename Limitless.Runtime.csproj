@@ -41,10 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\APIRouteAttribute.cs" />
-    <Compile Include="Interfaces\IAPIModule.cs" />
+    <Compile Include="Enums\HttpMethod.cs" />
     <Compile Include="Interfaces\IModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Types\APIRouteHandler.cs" />
+    <Compile Include="Types\APIRoute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

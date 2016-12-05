@@ -16,15 +16,27 @@ using System;
 namespace Limitless.Runtime.Types
 {
     /// <summary>
-    /// Defines a route handler for extending the Project Limitless API.
+    /// Defines a route for extending the Project Limitless API.
     /// </summary>
-    public class APIRouteHandler
+    public class APIRoute
     {
+        /// <summary>
+        /// The route's HTTP method.
+        /// </summary>
+        public HttpMethod Method { get; set; } = HttpMethod.Get;
         /// <summary>
         /// The route. See documentation on route formats at 
         /// https://docs.projectlimitless.io/ProjectLimitless/api-routes
         /// </summary>
-        public string Route { get; set; } = "/";
+        public string Path { get; set; } = "/";
+        /// <summary>
+        /// Get and sets if authentication for the route is required.
+        /// </summary>
+        public bool RequiresAuthentication { get; set; } = false;
+        /// <summary>
+        /// A description of the API route.
+        /// </summary>
+        public string Description { get; set; } = "Extended API Route";
         /// <summary>
         /// The handler function. Takes a dynamic object as input and
         /// returns a dynamic object.

@@ -11,23 +11,16 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
-using System.Collections.Generic;
-
-using Limitless.Runtime.Types;
-
-namespace Limitless.Runtime
+namespace Limitless.Runtime.Types
 {
     /// <summary>
-    /// The interface required to be implemented by all modules
-    /// that adds API routes to the Project Limitless API.
+    /// Defines the available Http methods for extending the API.
     /// </summary>
-    public interface IAPIModule
+    public enum HttpMethod
     {
-        /// <summary>
-        /// Returns the list of available routes for the module.
-        /// </summary>
-        /// <returns>The list of routes</returns>
-        List<APIRouteHandler> GetRoutes();
+        Get,
+        Post,
+        Put,
+        Delete
     }
 }
