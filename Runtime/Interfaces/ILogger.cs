@@ -11,7 +11,7 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-namespace Limitless.Runtime
+namespace Limitless.Runtime.Interfaces
 {
     /// <summary>
     /// The interface required to be implemented by all modules

@@ -13,7 +13,7 @@
 
 using System;
 
-using Limitless.Runtime.Types;
+using Limitless.Runtime.Enums;
 
 namespace Limitless.Runtime.Attributes
 {

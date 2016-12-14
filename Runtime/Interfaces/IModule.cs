@@ -13,7 +13,7 @@
 
 using System;
 
-namespace Limitless.Runtime
+namespace Limitless.Runtime.Interfaces
 {
     /// <summary>
     /// The interface required to be implemented by all modules

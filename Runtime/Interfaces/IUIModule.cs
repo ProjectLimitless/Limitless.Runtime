@@ -11,16 +11,19 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-namespace Limitless.Runtime.Types
+namespace Limitless.Runtime.Interfaces
 {
     /// <summary>
-    /// Defines the available Http methods for extending the API.
+    /// The interface required to be implemented by all modules
+    /// that define a user interface with static content routes.
     /// </summary>
-    public enum HttpMethod
+    public interface IUIModule
     {
-        Get,
-        Post,
-        Put,
-        Delete
+        /// <summary>
+        /// Returns the path for the static content. Used as
+        /// the URL route and folder.
+        /// </summary>
+        /// <returns>The folder and route</returns>
+        string GetContentPath();
     }
 }

@@ -13,6 +13,8 @@
 
 using System;
 
+using Limitless.Runtime.Enums;
+
 namespace Limitless.Runtime.Types
 {
     /// <summary>
