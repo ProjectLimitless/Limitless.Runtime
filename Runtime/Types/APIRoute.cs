@@ -45,6 +45,6 @@ namespace Limitless.Runtime.Types
         /// The method signature must be
         /// public dynamic MyHandler(dynamic input)
         /// </summary>
-        public Func<dynamic, dynamic> Handler { get; set; } = (dynamic input) => { return $"Missing Handler"; };
+        public Func<dynamic, dynamic, dynamic> Handler { get; set; } = (dynamic parameters, dynamic postData) => { return $"Missing Handler"; };
     }
 }

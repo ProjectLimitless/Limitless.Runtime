@@ -42,10 +42,12 @@
   <ItemGroup>
     <Compile Include="Attributes\APIRouteAttribute.cs" />
     <Compile Include="Enums\HttpMethod.cs" />
+    <Compile Include="Interfaces\IIdentityProvider.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\IUIModule.cs" />
     <Compile Include="Interfaces\IModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\BaseUser.cs" />
     <Compile Include="Types\APIRoute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
