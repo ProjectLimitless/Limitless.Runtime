@@ -12,35 +12,32 @@
 */
 
 using System;
-using System.Security.Principal;
+using System.Collections.Generic;
 
 namespace Limitless.Runtime.Types
 {
     /// <summary>
     /// Defines the base user object.
     /// </summary>
-    public class BaseUser : IIdentity
+    public class BaseUser
     {
+        /// <summary>
+        /// An enumerable containing the allowed claims for
+        /// an authenticated user.
+        /// </summary>
+        public IEnumerable<string> Claims { get; internal set; }
+        /// <summary>
+        /// The username, usually an email address.
+        /// </summary>
+        public string UserName { get; private set; }
         /// <summary>
         /// Gets and sets the user's first name
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Gets the authentication type used.
-        /// </summary>
-        public string AuthenticationType { get; private set; }
-        /// <summary>
-        /// Gets the authentication state of the user.
-        /// </summary>
-        public bool IsAuthenticated { get; private set; }
-        /// <summary>
         /// Gets and sets the user's surname
         /// </summary>
         public string Surname { get; set; }
-        /// <summary>
-        /// The username, usually an email address.
-        /// </summary>
-        public string Username { get; private set; }
         /// <summary>
         /// The user's access token.
         /// </summary>
@@ -50,12 +47,9 @@ namespace Limitless.Runtime.Types
         /// Constructor setting the username and authentication state.
         /// </summary>
         /// <param name="username">The username to set</param>
-        public BaseUser(string username, bool isAuthenticated)
+        public BaseUser(string username)
         {
-            // Token authentication is currently the default
-            AuthenticationType = "token";
-            Username = username;
-            IsAuthenticated = isAuthenticated;
+            UserName = username;
         }
     }
 }
