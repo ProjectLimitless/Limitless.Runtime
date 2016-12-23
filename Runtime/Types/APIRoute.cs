@@ -18,6 +18,7 @@ using Limitless.Runtime.Enums;
 namespace Limitless.Runtime.Types
 {
     /// <summary>
+    /// TODO: Move to Builtin, remove from runtime
     /// Defines a route for extending the Project Limitless API.
     /// </summary>
     public class APIRoute
@@ -45,6 +46,6 @@ namespace Limitless.Runtime.Types
         /// The method signature must be
         /// public dynamic MyHandler(dynamic input)
         /// </summary>
-        public Func<dynamic, dynamic, dynamic> Handler { get; set; } = (dynamic parameters, dynamic postData) => { return $"Missing Handler"; };
+        public Func<dynamic, dynamic, dynamic, dynamic> Handler { get; set; } = (dynamic parameters, dynamic postData, dynamic user) => { return $"Missing Handler"; };
     }
 }

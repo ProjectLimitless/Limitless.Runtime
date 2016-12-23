@@ -29,7 +29,7 @@ namespace Limitless.Runtime.Types
         /// <summary>
         /// The username, usually an email address.
         /// </summary>
-        public string UserName { get; private set; }
+        public string UserName { get; internal set; }
         /// <summary>
         /// Gets and sets the user's first name
         /// </summary>
@@ -42,14 +42,30 @@ namespace Limitless.Runtime.Types
         /// The user's access token.
         /// </summary>
         public string AccessToken { get; set; }
+        /// <summary>
+        /// Returns true is the user is authenticated.
+        /// </summary>
+        public bool IsAuthenticated { get; internal set; }
 
         /// <summary>
-        /// Constructor setting the username and authentication state.
+        /// Constructor setting the username.
         /// </summary>
         /// <param name="username">The username to set</param>
         public BaseUser(string username)
         {
             UserName = username;
+            Claims = new List<string>();
+        }
+
+        /// <summary>
+        /// Constructor setting the username and authentication state.
+        /// </summary>
+        /// <param name="username">The username to set</param>
+        /// <param name="isAuthenticated">The authentication state of the user</param>
+        public BaseUser(string username, bool isAuthenticated)
+        {
+            UserName = username;
+            Claims = new List<string>();
         }
     }
 }
