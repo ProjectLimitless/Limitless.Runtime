@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Attributes\APIRouteAttribute.cs" />
     <Compile Include="Enums\HttpMethod.cs" />
+    <Compile Include="Interfaces\IDatabaseProvider.cs" />
     <Compile Include="Interfaces\IIdentityProvider.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\IUIModule.cs" />
