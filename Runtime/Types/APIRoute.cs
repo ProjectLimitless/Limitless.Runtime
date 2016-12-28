@@ -43,8 +43,7 @@ namespace Limitless.Runtime.Types
         /// <summary>
         /// The handler function. Takes a dynamic object as input and
         /// returns a dynamic object.
-        /// The method signature must be
-        /// public dynamic MyHandler(dynamic input)
+        /// More on parameters available at https://docs.projectlimitless.io/ProjectLimitless/api-routes
         /// </summary>
         public Func<dynamic, dynamic, dynamic, dynamic> Handler { get; set; } = (dynamic parameters, dynamic postData, dynamic user) => { return $"Missing Handler"; };
     }
