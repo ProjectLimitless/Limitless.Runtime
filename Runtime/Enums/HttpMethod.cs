@@ -15,12 +15,17 @@ namespace Limitless.Runtime.Enums
 {
     /// <summary>
     /// Defines the available Http methods for extending the API.
+    /// 
+    /// The standard .NET System.Net.Http.HttpMethod cannot be used
+    /// in a custom attribute which is why I define my own.
     /// </summary>
     public enum HttpMethod
     {
         Get,
         Post,
         Put,
-        Delete
+        Delete,
+        Head,
+        Options
     }
 }
