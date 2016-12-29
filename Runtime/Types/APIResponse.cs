@@ -46,5 +46,16 @@ namespace Limitless.Runtime.Types
             StatusCode = 200;
             Headers = new Dictionary<string, string>();
         }
+
+        /// <summary>
+        /// Constructor with payload data.
+        /// </summary>
+        /// <param name="data">The payload data</param>
+        public APIResponse(dynamic data)
+        {
+            StatusCode = 200;
+            Headers = new Dictionary<string, string>();
+            Data = data;
+        }
     }
 }

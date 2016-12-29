@@ -40,5 +40,10 @@ namespace Limitless.Runtime.Attributes
         /// A description of the API route.
         /// </summary>
         public string Description { get; set; } = "Extended API Route";
+        /// <summary>
+        /// A list of fields required in the postData for methods using the 
+        /// POST method.
+        /// </summary>
+        public string[] RequiredFields { get; set; } = new string[] { };
     }
 }
