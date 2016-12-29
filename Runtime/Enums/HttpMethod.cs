@@ -21,11 +21,29 @@ namespace Limitless.Runtime.Enums
     /// </summary>
     public enum HttpMethod
     {
+        /// <summary>
+        /// GET HTTP Method
+        /// </summary>
         Get,
+        /// <summary>
+        /// POST HTTP Method
+        /// </summary>
         Post,
+        /// <summary>
+        /// PUT HTTP Method
+        /// </summary>
         Put,
+        /// <summary>
+        /// DELETE HTTP Method
+        /// </summary>
         Delete,
+        /// <summary>
+        /// HEAD HTTP Method
+        /// </summary>
         Head,
+        /// <summary>
+        /// OPTIONS HTTP Method
+        /// </summary>
         Options
     }
 }
