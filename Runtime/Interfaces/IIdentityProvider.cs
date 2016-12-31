@@ -24,21 +24,21 @@ namespace Limitless.Runtime.Interfaces
     public interface IIdentityProvider
     {
         /// <summary>
-        /// Validates an already issued token and returns the user if valid, null otherwise. 
+        /// Logs in a user with an already issued token and returns the result
+        /// containing an error of the user object and access token.
         /// </summary>
-        /// <param name="token">The token to validate</param>
-        /// <returns>The user object if logged in and valid, null otherwise</returns>
-        BaseUser ValidateToken(string token);
+        /// <param name="token">The token to log in with</param>
+        /// <returns>The result of the token login attempt</returns>
+        LoginResult TokenLogin(string token);
         /// <summary>
         /// Log a user in using the provided username and password and returns
-        /// the user object containing the access token if successful.
+        /// a login result containing an error or the user object and
+        /// access token.
         /// </summary>
         /// <param name="username">The user's username</param>
         /// <param name="password">The user's password</param>
-        /// <exception cref="UnauthorizedAccessException">Thrown is login fails</exception>
-        /// <exception cref="MissingFieldException">Thrown if username of password is blank</exception>
-        /// <returns>The user object if logged in, null otherwise</returns>
-        BaseUser Login(string username, string password);
+        /// <returns>The result of the login attempt</returns>
+        LoginResult Login(string username, string password);
         /*
         Create
         View
