@@ -65,6 +65,7 @@ namespace Limitless.Runtime.Types
         public BaseUser(string username, bool isAuthenticated)
         {
             UserName = username;
+            IsAuthenticated = isAuthenticated;
             Claims = new List<string>();
         }
     }
