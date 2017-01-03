@@ -31,5 +31,25 @@ namespace Limitless.Runtime.Interfaces
         /// </summary>
         /// <returns>The type of the configuration</returns>
         Type GetConfigurationType();
+        /// <summary>
+        /// Get the friendly title of the module.
+        /// </summary>
+        /// <returns>The friendly title</returns>
+        string GetTitle();
+        /// <summary>
+        /// Get the author of the module.
+        /// </summary>
+        /// <returns>The author of the module</returns>
+        string GetAuthor();
+        /// <summary>
+        /// Get the version of the module.
+        /// </summary>
+        /// <returns>The version of the module</returns>
+        string GetVersion();
+        /// <summary>
+        /// Get the description of the module.
+        /// </summary>
+        /// <returns>The description of the module</returns>
+        string GetDescription();
     }
 }
