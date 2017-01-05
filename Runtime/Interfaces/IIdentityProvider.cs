@@ -12,8 +12,10 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 using Limitless.Runtime.Types;
+using Limitless.Runtime.Attributes;
 
 namespace Limitless.Runtime.Interfaces
 {
@@ -39,9 +41,19 @@ namespace Limitless.Runtime.Interfaces
         /// <param name="password">The user's password</param>
         /// <returns>The result of the login attempt</returns>
         LoginResult Login(string username, string password);
+        /// <summary>
+        /// List all the registered users for the installation.
+        /// </summary>
+        /// <returns>The response containing the list</returns>
+        List<dynamic> List();
+        /// <summary>
+        /// Return the details for a specific user.
+        /// </summary>
+        /// <param name="id">The primary key identifier for the user</param>
+        /// <returns>The response containing the user</returns>
+        APIResponse View(dynamic id);
         /*
         Create
-        View
         Update
         Delete
         */
