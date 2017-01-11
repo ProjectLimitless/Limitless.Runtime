@@ -24,12 +24,11 @@ namespace Limitless.Runtime.Interfaces
     /// </summary>
     public interface IInputProvider
     {
-        /// TODO: Decide on properties vs methods for this.
         /// <summary>
-        /// Gets the type of input the provider handles.
+        /// Gets the list of MIME types this provider can handle.
         /// </summary>
-        /// <returns>The input type</returns>
-        InputType GetInputType();
+        /// <returns>The MIME types handled by this provider</returns>
+        IEnumerable<string> GetInputMimeTypes();
         /// TODO: Determine input and output types?
         /// <summary>
         /// Process the given input.

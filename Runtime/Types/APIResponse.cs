@@ -30,9 +30,12 @@ namespace Limitless.Runtime.Types
         /// </summary>
         public string StatusMessage { get; set; }
         /// <summary>
-        /// Additional headers to return.
+        /// Additional headers to return as a list of anonymous types.
+        /// Format:
+        ///     Header: "string",
+        ///     Valule: "string
         /// </summary>
-        public Dictionary<string, string> Headers { get; private set; }
+        public List<object> Headers { get; private set; }
         /// <summary>
         /// The data to return.
         /// </summary>
@@ -44,7 +47,7 @@ namespace Limitless.Runtime.Types
         public APIResponse()
         {
             StatusCode = 200;
-            Headers = new Dictionary<string, string>();
+            Headers = new List<object>();
         }
 
         /// <summary>
@@ -54,7 +57,7 @@ namespace Limitless.Runtime.Types
         public APIResponse(dynamic data)
         {
             StatusCode = 200;
-            Headers = new Dictionary<string, string>();
+            Headers = new List<object>();
             Data = data;
         }
     }

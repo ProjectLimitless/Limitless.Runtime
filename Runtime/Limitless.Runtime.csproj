@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\APIRouteAttribute.cs" />
+    <Compile Include="Enums\MimeType.cs" />
     <Compile Include="Enums\InputType.cs" />
     <Compile Include="Enums\HttpMethod.cs" />
     <Compile Include="Interfaces\IInputProvider.cs" />
