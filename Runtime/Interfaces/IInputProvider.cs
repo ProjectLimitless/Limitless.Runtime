@@ -14,7 +14,7 @@
 using System;
 using System.Collections.Generic;
 
-using Limitless.Runtime.Enums;
+using Limitless.Runtime.Types;
 
 namespace Limitless.Runtime.Interfaces
 {
@@ -33,8 +33,8 @@ namespace Limitless.Runtime.Interfaces
         /// <summary>
         /// Process the given input.
         /// </summary>
-        /// <param name="input">The input object, can be audio, text, etc.</param>
+        /// <param name="input">The input object containing the data</param>
         /// <returns>The result of processing the input</returns>
-        dynamic Process(dynamic input);
+        IOData Process(IOData input);
     }
 }
