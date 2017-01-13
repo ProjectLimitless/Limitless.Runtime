@@ -20,6 +20,11 @@ namespace Limitless.Runtime.Interfaces
     public interface ILogger
     {
         /// <summary>
+        /// Update the logging level.
+        /// </summary>
+        /// <param name="level">The level to update to</param>
+        void UpdateLevel(string level);
+        /// <summary>
         /// Trace messages should be used when debug isn't enough.
         /// </summary>
         /// <param name="format">The format of the string</param>
