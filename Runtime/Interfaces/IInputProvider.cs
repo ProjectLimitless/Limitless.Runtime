@@ -35,6 +35,6 @@ namespace Limitless.Runtime.Interfaces
         /// </summary>
         /// <param name="input">The input object containing the data</param>
         /// <returns>The result of processing the input</returns>
-        IOData Process(IOData input);
+        object Process(IOData input);
     }
 }
