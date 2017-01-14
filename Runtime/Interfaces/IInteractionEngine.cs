@@ -26,7 +26,14 @@ namespace Limitless.Runtime.Interfaces
     public interface IInteractionEngine
     {
         // Inputs
-        void ProcessInput();
+        /// <summary>
+        /// Process input coming from the input
+        /// pipeline and return the data to output via
+        /// the output pipeline.
+        /// </summary>
+        /// <param name="ioData">The input data</param>
+        /// <returns>The output data to send</returns>
+        IOData ProcessInput(IOData ioData);
         
         // Skills
         void RegisterSkill();
@@ -34,5 +41,6 @@ namespace Limitless.Runtime.Interfaces
         void ListSkills();
 
         // ExecuteSkill - Should be a function passed into the engine
+        
     }
 }
