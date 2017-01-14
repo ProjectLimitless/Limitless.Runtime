@@ -20,21 +20,19 @@ namespace Limitless.Runtime.Interfaces
 {
     /// <summary>
     /// The interface required to be implemented by modules providing
-    /// input processing.
+    /// the primary interaction engine. The interaction engine
+    /// handles almost all interaction with Project Limitless.
     /// </summary>
-    public interface IInputProvider
+    public interface IInteractionEngine
     {
-        /// <summary>
-        /// Gets the list of MIME types this provider can handle.
-        /// </summary>
-        /// <returns>The MIME types handled by this provider</returns>
-        IEnumerable<string> GetInputMimeTypes();
-        /// TODO: Determine input and output types?
-        /// <summary>
-        /// Process the given input.
-        /// </summary>
-        /// <param name="input">The input object containing the data</param>
-        /// <returns>The result of processing the input</returns>
-        IOData Process(IOData input);
+        // Inputs
+        void ProcessInput();
+        
+        // Skills
+        void RegisterSkill();
+        void DeregisterSkill();
+        void ListSkills();
+
+        // ExecuteSkill - Should be a function passed into the engine
     }
 }

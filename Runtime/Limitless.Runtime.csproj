@@ -44,6 +44,7 @@
     <Compile Include="Enums\MimeType.cs" />
     <Compile Include="Enums\InputType.cs" />
     <Compile Include="Enums\HttpMethod.cs" />
+    <Compile Include="Interfaces\IInteractionEngine.cs" />
     <Compile Include="Interfaces\IInputProvider.cs" />
     <Compile Include="Interfaces\IDatabaseProvider.cs" />
     <Compile Include="Interfaces\IIdentityProvider.cs" />
