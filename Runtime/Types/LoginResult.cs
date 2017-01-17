@@ -52,6 +52,7 @@ namespace Limitless.Runtime.Types
         /// was a success or not as well as the error response if false.
         /// </summary>
         /// <param name="success">true if login was a success, false otherwise</param>
+        /// <param name="errorResponse">The response to return if an error occurred</param>
         public LoginResult(bool success, string errorResponse)
         {
             if (success && string.IsNullOrEmpty(errorResponse) == false)

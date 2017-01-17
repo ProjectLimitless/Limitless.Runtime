@@ -73,7 +73,7 @@ namespace Limitless.Runtime.Interfaces
         /// </summary>
         /// <param name="sql">The update query</param>
         /// <param name="args">The parameters to bind</param>
-        /// <returns>The amount of rows affected /returns>
+        /// <returns>The amount of rows affected</returns>
         int Update(string sql, params object[] args);
         /// <summary>
         /// Deletes a record or records.
