@@ -38,7 +38,8 @@ namespace Limitless.Runtime.Interfaces
         // Skills
         void RegisterSkill();
         void DeregisterSkill();
-        void ListSkills();
+        // TODO: Define skill structure
+        List<dynamic> ListSkills();
 
         // ExecuteSkill - Should be a function passed into the engine
         

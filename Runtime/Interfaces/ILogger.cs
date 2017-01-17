@@ -11,6 +11,8 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
+using Limitless.Runtime.Enums;
+
 namespace Limitless.Runtime.Interfaces
 {
     /// <summary>
@@ -23,7 +25,7 @@ namespace Limitless.Runtime.Interfaces
         /// Update the logging level.
         /// </summary>
         /// <param name="level">The level to update to</param>
-        void UpdateLevel(string level);
+        void UpdateLevel(LogLevel level);
         /// <summary>
         /// Trace messages should be used when debug isn't enough.
         /// </summary>
