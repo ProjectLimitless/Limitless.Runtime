@@ -1,6 +1,6 @@
 ﻿/** 
 * This file is part of Project Limitless.
-* Copyright © 2016 Donovan Solms.
+* Copyright © 2017 Donovan Solms.
 * Project Limitless
 * https://www.projectlimitless.io
 * 
@@ -11,27 +11,23 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-namespace Limitless.Runtime.Enums
+using System;
+
+namespace Limitless.Runtime.Interactions
 {
     /// <summary>
-    /// Defines the default MIME types for Project Limitless.
+    /// A skill executor that runs over HTTP/HTTPS.
     /// </summary>
-    public static class MimeType
+    public class NetworkExecutor
     {
         /// <summary>
-        /// JSON data.
-        /// application/json
+        /// The full URL endpoint to execute against.
         /// </summary>
-        public const string Json = "application/json";
+        public string Url { get; set; }
         /// <summary>
-        /// Wave data.
-        /// audio/wav
+        /// Should the certificate be validated for HTTPS calls. 
+        /// Defaults to true;
         /// </summary>
-        public const string Wav = "audio/wav";
-        /// <summary>
-        /// Plain text data.
-        /// text/plain
-        /// </summary>
-        public const string Text = "text/plain";
+        public bool ValidateCertificate { get; set; } = true;
     }
 }

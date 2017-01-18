@@ -12,23 +12,20 @@
 */
 
 using System;
-using System.Collections.Generic;
 
-using Limitless.Runtime.Types;
-
-namespace Limitless.Runtime.Interfaces
+namespace Limitless.Runtime.Interactions
 {
     /// <summary>
-    /// Defines the method of executing a skill.
+    /// A skill executor that is handled internally
+    /// or by a loaded module.
     /// </summary>
-    public interface ISkillExecutor
+    public class BinaryExecutor
     {
         /// <summary>
-        /// Execute the given skill.
-        /// 
-        /// // TODO: Rethink - see Skill.cs
+        /// The handling function taking a JSON string as
+        /// input and returning a JSON string as output.
+        /// // TODO: If this documentation true?
         /// </summary>
-        /// <param name="skill"></param>
-        void ExecuteSkill(Skill skill);
+        public Func<string, string> Handler;
     }
 }

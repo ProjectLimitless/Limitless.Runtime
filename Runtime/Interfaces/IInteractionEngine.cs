@@ -1,6 +1,6 @@
 ﻿/** 
 * This file is part of Project Limitless.
-* Copyright © 2016 Donovan Solms.
+* Copyright © 2017 Donovan Solms.
 * Project Limitless
 * https://www.projectlimitless.io
 * 
@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 
 using Limitless.Runtime.Types;
+using Limitless.Runtime.Interactions;
 
 namespace Limitless.Runtime.Interfaces
 {
@@ -36,7 +37,13 @@ namespace Limitless.Runtime.Interfaces
         IOData ProcessInput(IOData ioData);
         
         // Skills
-        void RegisterSkill();
+        /// <summary>
+        /// Register a new skill.
+        /// </summary>
+        /// <param name="skill">The skill to register</param>
+        /// <returns>true if the skill is registered, false otherwise</returns>
+        bool RegisterSkill(Skill skill);
+
         void DeregisterSkill();
         // TODO: Define skill structure
         List<dynamic> ListSkills();

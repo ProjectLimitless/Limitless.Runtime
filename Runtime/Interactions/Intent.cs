@@ -13,7 +13,9 @@
 
 using System;
 
-namespace Limitless.Runtime.Types
+using Limitless.Runtime.Types;
+
+namespace Limitless.Runtime.Interactions
 {
     /// <summary>
     /// Defines an intent. 

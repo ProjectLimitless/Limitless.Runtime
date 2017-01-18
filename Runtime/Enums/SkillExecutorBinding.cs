@@ -1,6 +1,6 @@
 ﻿/** 
 * This file is part of Project Limitless.
-* Copyright © 2016 Donovan Solms.
+* Copyright © 2017 Donovan Solms.
 * Project Limitless
 * https://www.projectlimitless.io
 * 
@@ -14,24 +14,21 @@
 namespace Limitless.Runtime.Enums
 {
     /// <summary>
-    /// Defines the default MIME types for Project Limitless.
+    /// Defines the available skill executor binding methods.
     /// </summary>
-    public static class MimeType
+    public static class SkillExecutorBinding
     {
         /// <summary>
-        /// JSON data.
-        /// application/json
+        /// A type of executor that is executed over HTTP/HTTPS.
         /// </summary>
-        public const string Json = "application/json";
+        public const string Network = "Network";
         /// <summary>
-        /// Wave data.
-        /// audio/wav
+        /// A type of executor that is built in.
         /// </summary>
-        public const string Wav = "audio/wav";
+        public const string Builtin = "Builtin";
         /// <summary>
-        /// Plain text data.
-        /// text/plain
+        /// A type of executor that was loaded as part of a module. 
         /// </summary>
-        public const string Text = "text/plain";
+        public const string Module = "Module";
     }
 }

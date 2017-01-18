@@ -43,10 +43,11 @@
   <ItemGroup>
     <Compile Include="Attributes\APIRouteAttribute.cs" />
     <Compile Include="Enums\LogLevel.cs" />
+    <Compile Include="Enums\SkillExecutorBinding.cs" />
     <Compile Include="Enums\MimeType.cs" />
     <Compile Include="Enums\InputType.cs" />
     <Compile Include="Enums\HttpMethod.cs" />
-    <Compile Include="Interfaces\ISkillExecutor.cs" />
+    <Compile Include="Interactions\BinaryExecutor.cs" />
     <Compile Include="Interfaces\IInteractionEngine.cs" />
     <Compile Include="Interfaces\IInputProvider.cs" />
     <Compile Include="Interfaces\IDatabaseProvider.cs" />
@@ -56,9 +57,10 @@
     <Compile Include="Interfaces\IModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\DateRange.cs" />
+    <Compile Include="Interactions\NetworkExecutor.cs" />
     <Compile Include="Types\IOData.cs" />
-    <Compile Include="Types\Intent.cs" />
-    <Compile Include="Types\Skill.cs" />
+    <Compile Include="Interactions\Intent.cs" />
+    <Compile Include="Interactions\Skill.cs" />
     <Compile Include="Types\LoginResult.cs" />
     <Compile Include="Types\APIResponse.cs" />
     <Compile Include="Types\BaseUser.cs" />

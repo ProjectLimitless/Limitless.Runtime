@@ -84,6 +84,15 @@ namespace Limitless.Runtime.Types
         private DateTime _end;
 
         /// <summary>
+        /// Creates a new instance and sets the start date
+        /// to DateTime.Now.
+        /// </summary>
+        public DateRange()
+        {
+            Start = DateTime.Now;
+        }
+
+        /// <summary>
         /// Creates a new instance and sets the start date.
         /// </summary>
         /// <param name="start">The start date</param>

@@ -13,7 +13,9 @@
 
 using System;
 
-namespace Limitless.Runtime.Types
+using Limitless.Runtime.Interfaces;
+
+namespace Limitless.Runtime.Interactions
 {
     /// <summary>
     /// Defines a skill. 
@@ -24,20 +26,40 @@ namespace Limitless.Runtime.Types
     {
         // TODO: Find way to set values only once
         // TODO: Where should required data be?
-
+        
+        /// <summary>
+        /// The unique ID of the skill.
+        /// Should be less than 128 characters.
+        /// </summary>
+        public string UUID { get; set; }
         /// <summary>
         /// The name of the skill.
         /// </summary>
         public string Name { get; set; }
         /// <summary>
+        /// The location where the skill is executed.
+        /// </summary>
+        public string Location { get; set; }
+        /// <summary>
         /// The intent that will trigger this skill.
         /// </summary>
         public Intent Intent { get; set; }
         /// <summary>
-        /// Defines the method for executing the skill. Currently only
-        /// the NetworkSkillExecutor is available.
-        /// //TODO: Rethink this. Skill.Executor.Execute(skill) doesn't make sense.
+        /// The <see cref="Limitless.Runtime.Enums.SkillExecutorBinding"/> of
+        /// the Executor.
         /// </summary>
-        public ISkillExecutor Executor { get; set; }
+        public string Binding { get; set; }
+        /// <summary>
+        /// Defines the method for executing the skill.
+        /// </summary>
+        public dynamic Executor { get; set; }
+
+        /// <summary>
+        /// Default constructor. Sets a default Guid UUID.
+        /// </summary>
+        public Skill()
+        {
+            UUID = Guid.NewGuid().ToString();
+        }
     }
 }
