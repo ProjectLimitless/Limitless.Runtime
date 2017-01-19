@@ -36,19 +36,19 @@ namespace Limitless.Runtime.Interfaces
         /// <returns>The output data to send</returns>
         IOData ProcessInput(IOData ioData);
         
-        // Skills
         /// <summary>
         /// Register a new skill.
         /// </summary>
         /// <param name="skill">The skill to register</param>
         /// <returns>true if the skill is registered, false otherwise</returns>
         bool RegisterSkill(Skill skill);
+        /// <summary>
+        /// Get a list of registered skills.
+        /// </summary>
+        /// <returns></returns>
+        List<Skill> ListSkills();
 
         void DeregisterSkill();
-        // TODO: Define skill structure
-        List<dynamic> ListSkills();
-
-        // ExecuteSkill - Should be a function passed into the engine
         
     }
 }

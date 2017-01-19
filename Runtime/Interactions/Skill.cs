@@ -12,8 +12,7 @@
 */
 
 using System;
-
-using Limitless.Runtime.Interfaces;
+using System.Collections.Generic;
 
 namespace Limitless.Runtime.Interactions
 {
@@ -24,9 +23,6 @@ namespace Limitless.Runtime.Interactions
     /// </summary>
     public class Skill
     {
-        // TODO: Find way to set values only once
-        // TODO: Where should required data be?
-        
         /// <summary>
         /// The unique ID of the skill.
         /// Should be less than 128 characters.
@@ -37,13 +33,31 @@ namespace Limitless.Runtime.Interactions
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// The location where the skill is executed.
+        /// A short description of the skill.
         /// </summary>
-        public string Location { get; set; }
+        public string ShortDescription { get; set; }
+        /// <summary>
+        /// The author of the skill.
+        /// </summary>
+        public string Author { get; set; }
+        /// <summary>
+        /// The help details for the skill.
+        /// </summary>
+        public SkillHelp Help { get; set; }
+        /// <summary>
+        /// The locations where the skill can be executed..
+        /// </summary>
+        public List<string> Locations { get; set; }
         /// <summary>
         /// The intent that will trigger this skill.
         /// </summary>
         public Intent Intent { get; set; }
+        /// <summary>
+        /// The required parameters to execute this skill. If they are
+        /// not provided Limitless will ask for them without the interaction
+        /// engine's help.
+        /// </summary>
+        public List<SkillRequiredParameter> RequiredParameters { get; set; }
         /// <summary>
         /// The <see cref="Limitless.Runtime.Enums.SkillExecutorBinding"/> of
         /// the Executor.
@@ -60,6 +74,10 @@ namespace Limitless.Runtime.Interactions
         public Skill()
         {
             UUID = Guid.NewGuid().ToString();
+            Intent = new Intent();
+            Locations = new List<string>();
+            Help = new SkillHelp();
+            RequiredParameters = new List<SkillRequiredParameter>();
         }
     }
 }

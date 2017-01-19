@@ -42,12 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\APIRouteAttribute.cs" />
+    <Compile Include="Enums\SkillParameterType.cs" />
     <Compile Include="Enums\LogLevel.cs" />
     <Compile Include="Enums\SkillExecutorBinding.cs" />
     <Compile Include="Enums\MimeType.cs" />
     <Compile Include="Enums\InputType.cs" />
     <Compile Include="Enums\HttpMethod.cs" />
     <Compile Include="Interactions\BinaryExecutor.cs" />
+    <Compile Include="Interactions\SkillRequiredParameters.cs" />
+    <Compile Include="Interactions\SkillHelp.cs" />
     <Compile Include="Interfaces\IInteractionEngine.cs" />
     <Compile Include="Interfaces\IInputProvider.cs" />
     <Compile Include="Interfaces\IDatabaseProvider.cs" />

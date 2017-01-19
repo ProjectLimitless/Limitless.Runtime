@@ -14,35 +14,22 @@
 using System;
 using System.Collections.Generic;
 
-using Limitless.Runtime.Types;
-
 namespace Limitless.Runtime.Interactions
 {
     /// <summary>
-    /// Defines an intent. 
-    /// // TODO: Maybe /interaction-engine/intents?
-    /// See https://docs.projectlimitless.io/project-limitless/intents.
+    /// Holds parameters required to execute a skill.
     /// </summary>
-    public class Intent
+    public class SkillRequiredParameter
     {
         /// <summary>
-        /// The intent actions.
+        /// The parameter to search for.
         /// </summary>
-        public List<string> Actions { get; set; }
+        public string Parameter { get; set; }
         /// <summary>
-        /// The targets of the actions, if available.
+        /// The type of data expected.
+        /// See <see cref="Limitless.Runtime.Enums.SkillParameterType"/> 
+        /// for available types.
         /// </summary>
-        public List<string> Targets { get; set; }
-
-        // TODO: Required params
-
-        /// <summary>
-        /// Standard constructor setting defaults.
-        /// </summary>
-        public Intent()
-        {
-            Actions = new List<string>();
-            Targets = new List<string>();
-        }
+        public string Type { get; set; }
     }
 }
