@@ -43,12 +43,15 @@ namespace Limitless.Runtime.Interfaces
         /// <returns>true if the skill is registered, false otherwise</returns>
         bool RegisterSkill(Skill skill);
         /// <summary>
+        /// Deregister a registered skill.
+        /// </summary>
+        /// <param name="skillUUID">The skill's UUID to deregister</param>
+        /// <returns>true if deregistered, false otherwise</returns>
+        bool DeregisterSkill(string skillUUID);
+        /// <summary>
         /// Get a list of registered skills.
         /// </summary>
         /// <returns></returns>
         List<Skill> ListSkills();
-
-        void DeregisterSkill();
-        
     }
 }

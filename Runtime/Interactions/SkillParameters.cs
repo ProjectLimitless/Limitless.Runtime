@@ -17,9 +17,9 @@ using System.Collections.Generic;
 namespace Limitless.Runtime.Interactions
 {
     /// <summary>
-    /// Holds parameters required to execute a skill.
+    /// Holds parameters for a skill.
     /// </summary>
-    public class SkillRequiredParameter
+    public class SkillParameter
     {
         /// <summary>
         /// The parameter to search for.

@@ -14,8 +14,6 @@
 using System;
 using System.Collections.Generic;
 
-using Limitless.Runtime.Types;
-
 namespace Limitless.Runtime.Interactions
 {
     /// <summary>
@@ -33,9 +31,7 @@ namespace Limitless.Runtime.Interactions
         /// The targets of the actions, if available.
         /// </summary>
         public List<string> Targets { get; set; }
-
-        // TODO: Required params
-
+        
         /// <summary>
         /// Standard constructor setting defaults.
         /// </summary>

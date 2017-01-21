@@ -45,7 +45,7 @@ namespace Limitless.Runtime.Interactions
         /// </summary>
         public SkillHelp Help { get; set; }
         /// <summary>
-        /// The locations where the skill can be executed..
+        /// The locations where the skill can be executed.
         /// </summary>
         public List<string> Locations { get; set; }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Limitless.Runtime.Interactions
         /// not provided Limitless will ask for them without the interaction
         /// engine's help.
         /// </summary>
-        public List<SkillRequiredParameter> RequiredParameters { get; set; }
+        public List<SkillParameter> RequiredParameters { get; set; }
         /// <summary>
         /// The <see cref="Limitless.Runtime.Enums.SkillExecutorBinding"/> of
         /// the Executor.
@@ -77,7 +77,7 @@ namespace Limitless.Runtime.Interactions
             Intent = new Intent();
             Locations = new List<string>();
             Help = new SkillHelp();
-            RequiredParameters = new List<SkillRequiredParameter>();
+            RequiredParameters = new List<SkillParameter>();
         }
     }
 }

@@ -49,7 +49,7 @@
     <Compile Include="Enums\InputType.cs" />
     <Compile Include="Enums\HttpMethod.cs" />
     <Compile Include="Interactions\BinaryExecutor.cs" />
-    <Compile Include="Interactions\SkillRequiredParameters.cs" />
+    <Compile Include="Interactions\SkillParameters.cs" />
     <Compile Include="Interactions\SkillHelp.cs" />
     <Compile Include="Interfaces\IInteractionEngine.cs" />
     <Compile Include="Interfaces\IInputProvider.cs" />
