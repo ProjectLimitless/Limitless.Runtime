@@ -51,6 +51,7 @@
     <Compile Include="Interactions\BinaryExecutor.cs" />
     <Compile Include="Interactions\SkillParameters.cs" />
     <Compile Include="Interactions\SkillHelp.cs" />
+    <Compile Include="Interfaces\ISkillExecutor.cs" />
     <Compile Include="Interfaces\IInteractionEngine.cs" />
     <Compile Include="Interfaces\IInputProvider.cs" />
     <Compile Include="Interfaces\IDatabaseProvider.cs" />

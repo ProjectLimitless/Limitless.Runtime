@@ -13,12 +13,14 @@
 
 using System;
 
+using Limitless.Runtime.Interfaces;
+
 namespace Limitless.Runtime.Interactions
 {
     /// <summary>
     /// A skill executor that runs over HTTP/HTTPS.
     /// </summary>
-    public class NetworkExecutor
+    public class NetworkExecutor : ISkillExecutor
     {
         /// <summary>
         /// The full URL endpoint to execute against.
@@ -29,5 +31,13 @@ namespace Limitless.Runtime.Interactions
         /// Defaults to true;
         /// </summary>
         public bool ValidateCertificate { get; set; } = true;
+        /// <summary>
+        /// Implemented from interface
+        /// <see cref="Limitless.Runtime.Interfaces.ISkillExecutor.Execute(Skill)"/>
+        /// </summary>
+        public void Execute(Skill skill)
+        {
+            Console.WriteLine($"EXECUUUUUTE to {Url}!");
+        }
     }
 }
