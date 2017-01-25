@@ -48,8 +48,9 @@
     <Compile Include="Enums\MimeType.cs" />
     <Compile Include="Enums\InputType.cs" />
     <Compile Include="Enums\HttpMethod.cs" />
+    <Compile Include="Interactions\Actionable.cs" />
     <Compile Include="Interactions\BinaryExecutor.cs" />
-    <Compile Include="Interactions\SkillParameters.cs" />
+    <Compile Include="Interactions\SkillParameter.cs" />
     <Compile Include="Interactions\SkillHelp.cs" />
     <Compile Include="Interfaces\ISkillExecutor.cs" />
     <Compile Include="Interfaces\IInteractionEngine.cs" />

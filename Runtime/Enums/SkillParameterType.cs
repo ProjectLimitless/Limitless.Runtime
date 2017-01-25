@@ -22,5 +22,9 @@ namespace Limitless.Runtime.Enums
         /// An integer larger of equal to zero.
         /// </summary>
         public const string Integer = "int";
+        /// <summary>
+        /// Dates with time.
+        /// </summary>
+        public const string DateRange = "date-range";
     }
 }

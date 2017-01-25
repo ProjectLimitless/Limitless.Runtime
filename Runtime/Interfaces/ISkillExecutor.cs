@@ -25,9 +25,9 @@ namespace Limitless.Runtime.Interfaces
     public interface ISkillExecutor
     {
         /// <summary>
-        /// Execute the given skill.
+        /// Execute the given actionable.
         /// </summary>
-        /// <param name="skill">The skill to execute</param>
-        void Execute(Skill skill);
+        /// <param name="actionable">The actionable to execute</param>
+        void Execute(Actionable actionable);
     }
 }

@@ -33,11 +33,11 @@ namespace Limitless.Runtime.Interactions
         public bool ValidateCertificate { get; set; } = true;
         /// <summary>
         /// Implemented from interface
-        /// <see cref="Limitless.Runtime.Interfaces.ISkillExecutor.Execute(Skill)"/>
+        /// <see cref="Limitless.Runtime.Interfaces.ISkillExecutor.Execute(Actionable)"/>
         /// </summary>
-        public void Execute(Skill skill)
+        public void Execute(Actionable actionable)
         {
-            Console.WriteLine($"EXECUUUUUTE to {Url}!");
+            Console.WriteLine($"EXECUUUUUTE to {Url} - {actionable.Skill.Name}!");
         }
     }
 }
