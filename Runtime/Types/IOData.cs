@@ -12,6 +12,7 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 namespace Limitless.Runtime.Types
 {
@@ -24,6 +25,8 @@ namespace Limitless.Runtime.Types
         /// The MIME type of the Data.
         /// </summary>
         public string Mime { get; set; }
+
+        public IEnumerable<Tuple<string, decimal>> Languages { get; set; }
         /// <summary>
         /// The data of type Mime.
         /// </summary>

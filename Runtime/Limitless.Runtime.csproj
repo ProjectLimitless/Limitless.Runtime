@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\APIRouteAttribute.cs" />
+    <Compile Include="Enums\IODirection.cs" />
     <Compile Include="Enums\SkillParameterType.cs" />
     <Compile Include="Enums\LogLevel.cs" />
     <Compile Include="Enums\SkillExecutorBinding.cs" />
@@ -54,7 +55,7 @@
     <Compile Include="Interactions\SkillHelp.cs" />
     <Compile Include="Interfaces\ISkillExecutor.cs" />
     <Compile Include="Interfaces\IInteractionEngine.cs" />
-    <Compile Include="Interfaces\IInputProvider.cs" />
+    <Compile Include="Interfaces\IIOProvider.cs" />
     <Compile Include="Interfaces\IDatabaseProvider.cs" />
     <Compile Include="Interfaces\IIdentityProvider.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Types\APIRequest.cs" />
     <Compile Include="Types\DateRange.cs" />
     <Compile Include="Interactions\NetworkExecutor.cs" />
+    <Compile Include="Types\MimeLanguageCombination.cs" />
     <Compile Include="Types\IOData.cs" />
     <Compile Include="Interactions\Intent.cs" />
     <Compile Include="Interactions\Skill.cs" />

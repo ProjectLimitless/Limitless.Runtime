@@ -15,26 +15,31 @@ using System;
 using System.Collections.Generic;
 
 using Limitless.Runtime.Types;
+using Limitless.Runtime.Enums;
 
 namespace Limitless.Runtime.Interfaces
 {
     /// <summary>
-    /// The interface required to be implemented by modules providing
-    /// input processing.
+    /// The interface required to be implemented by modules 
+    /// that form part of the input/output pipelines.
     /// </summary>
-    public interface IInputProvider
+    public interface IIOProvider
     {
+        /// <summary>
+        /// Get and sets the direction of the input/output provider.
+        /// </summary>
+        IODirection Direction { get; set; }
         /// <summary>
         /// Gets the list of MIME types this provider can handle.
         /// </summary>
         /// <returns>The MIME types handled by this provider</returns>
-        IEnumerable<string> GetInputMimeTypes();
+        IEnumerable<MimeLanguageCombination> GetSupportedMimeLanguages();
         /// TODO: Determine input and output types?
         /// <summary>
-        /// Process the given input.
+        /// Process the given data.
         /// </summary>
-        /// <param name="input">The input object containing the data</param>
-        /// <returns>The result of processing the input</returns>
-        IOData Process(IOData input);
+        /// <param name="data">The data object to process</param>
+        /// <returns>The result of processing the data</returns>
+        IOData Process(IOData data);
     }
 }

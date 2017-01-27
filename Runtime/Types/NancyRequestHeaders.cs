@@ -105,6 +105,18 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
+        /// The language of the request.
+        /// </summary>
+        /// <value>A <see cref="string"/> containing the header value if it is available; otherwise <see cref="string.Empty"/>.</value>
+        public string RequestLanguage
+        {
+            // Note: This header was added specifically for use in Project Limitless input pipelines.
+            // TODO: See https://docs.projectlimitless.io/project-limitless/input-providers#request-language
+            get { return this.GetValue("Request-Language", x => x.First(), "en"); }
+            set { this.SetHeaderValues("Request-Language", value, x => new[] { x }); }
+        }
+
+        /// <summary>
         /// Authorization header value for request.
         /// </summary>
         /// <value>A <see cref="string"/> containing the header value if it is available; otherwise <see cref="string.Empty"/>.</value>
