@@ -149,7 +149,7 @@ namespace Limitless.Runtime.Types
         /// </summary>
         public string ContentType
         {
-            get { return this.GetValue("Content-Type").First(); }
+            get { return this.GetValue("Content-Type", x => x.First(), string.Empty); }
             set { this.SetHeaderValues("Content-Type", value, x => new[] { x.ToString() }); }
         }
 
