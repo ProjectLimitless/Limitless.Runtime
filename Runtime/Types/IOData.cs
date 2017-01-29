@@ -25,12 +25,14 @@ namespace Limitless.Runtime.Types
         /// The MIME type of the Data.
         /// </summary>
         public string Mime { get; set; }
-
-        public IEnumerable<Tuple<string, decimal>> Languages { get; set; }
         /// <summary>
         /// The data of type Mime.
         /// </summary>
         public dynamic Data { get; set; }
+        /// <summary>
+        /// The language for the Mime.
+        /// </summary>
+        public string Language { get; set; }
 
         /// <summary>
         /// Standard constructor with given MIME type.
@@ -39,6 +41,7 @@ namespace Limitless.Runtime.Types
         public IOData(string mime)
         {
             Mime = mime;
+            Language = "en";
         }
 
         /// <summary>
@@ -50,6 +53,20 @@ namespace Limitless.Runtime.Types
         {
             Mime = mime;
             Data = data;
+            Language = "en";
+        }
+
+        /// <summary>
+        /// Standard constructor with MIME type for the Data.
+        /// </summary>
+        /// <param name="mime">The MIME type of the Data</param>
+        /// <param name="data">The data</param>
+        /// <param name="language">The language of the data</param>
+        public IOData(string mime, dynamic data, string language)
+        {
+            Mime = mime;
+            Data = data;
+            Language = language;
         }
     }
 }
