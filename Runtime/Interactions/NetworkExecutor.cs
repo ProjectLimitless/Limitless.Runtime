@@ -31,6 +31,7 @@ namespace Limitless.Runtime.Interactions
         /// Defaults to true;
         /// </summary>
         public bool ValidateCertificate { get; set; } = true;
+
         /// <summary>
         /// Implemented from interface
         /// <see cref="Limitless.Runtime.Interfaces.ISkillExecutor.Execute(Actionable)"/>

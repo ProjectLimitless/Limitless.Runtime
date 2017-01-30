@@ -1,6 +1,6 @@
 ﻿/** 
 * This file is part of Project Limitless.
-* Copyright © 2016 Donovan Solms.
+* Copyright © 2017 Donovan Solms.
 * Project Limitless
 * https://www.projectlimitless.io
 * 
@@ -14,8 +14,8 @@
 using System;
 using System.Collections.Generic;
 
-using Limitless.Runtime.Types;
 using Limitless.Runtime.Enums;
+using Limitless.Runtime.Types;
 
 namespace Limitless.Runtime.Interfaces
 {
@@ -30,10 +30,11 @@ namespace Limitless.Runtime.Interfaces
         /// </summary>
         IODirection Direction { get; set; }
         /// <summary>
-        /// Gets the list of MIME types this provider can handle.
+        /// Gets the supported combination of input/output MIME types
+        /// and languages.
         /// </summary>
-        /// <returns>The MIME types handled by this provider</returns>
-        IEnumerable<MimeLanguageCombination> GetSupportedMimeLanguages();
+        /// <returns>The supported combinations</returns>
+        IEnumerable<IOCombination> GetSupportedIOCombinations();
         /// TODO: Determine input and output types?
         /// <summary>
         /// Process the given data.
