@@ -22,51 +22,32 @@ namespace Limitless.Runtime.Types
     public class IOData
     {
         /// <summary>
-        /// The MIME type of the Data.
+        /// The Mime and Language for Data.
         /// </summary>
-        public string Mime { get; set; }
+        public MimeLanguage MimeLanguage { get; set; }
         /// <summary>
         /// The data of type Mime.
         /// </summary>
         public dynamic Data { get; set; }
-        /// <summary>
-        /// The language for the Mime.
-        /// </summary>
-        public string Language { get; set; }
 
         /// <summary>
-        /// Standard constructor with given MIME type.
+        /// Standard constructor with given MIME/Language.
         /// </summary>
-        /// <param name="mime">The MIME type of the Data</param>
-        public IOData(string mime)
+        /// <param name="mimeLanguage">The MIME/Language combination of the Data</param>
+        public IOData(MimeLanguage mimeLanguage)
         {
-            Mime = mime;
-            Language = "en";
+            MimeLanguage = mimeLanguage;
         }
 
         /// <summary>
-        /// Standard constructor with MIME type for the Data.
+        /// Standard constructor with given MIME/Language and Data.
         /// </summary>
-        /// <param name="mime">The MIME type of the Data</param>
+        /// <param name="mimeLanguage">The MIME/Language combination of the Data</param>
         /// <param name="data">The data</param>
-        public IOData(string mime, dynamic data)
+        public IOData(MimeLanguage mimeLanguage, dynamic data)
         {
-            Mime = mime;
+            MimeLanguage = mimeLanguage;
             Data = data;
-            Language = "en";
-        }
-
-        /// <summary>
-        /// Standard constructor with MIME type for the Data.
-        /// </summary>
-        /// <param name="mime">The MIME type of the Data</param>
-        /// <param name="data">The data</param>
-        /// <param name="language">The language of the data</param>
-        public IOData(string mime, dynamic data, string language)
-        {
-            Mime = mime;
-            Data = data;
-            Language = language;
         }
     }
 }

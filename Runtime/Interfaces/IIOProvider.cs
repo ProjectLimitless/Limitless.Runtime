@@ -34,7 +34,7 @@ namespace Limitless.Runtime.Interfaces
         /// and languages.
         /// </summary>
         /// <returns>The supported combinations</returns>
-        IEnumerable<IOCombination> GetSupportedIOCombinations();
+        IEnumerable<SupportedIOCombination> GetSupportedIOCombinations();
         /// TODO: Determine input and output types?
         /// <summary>
         /// Process the given data.

@@ -35,7 +35,13 @@ namespace Limitless.Runtime.Interfaces
         /// <param name="ioData">The input data</param>
         /// <returns>The output data to send</returns>
         IOData ProcessInput(IOData ioData);
-        
+        /// <summary>
+        /// Gets the supported combination of input/output MIME types
+        /// and languages.
+        /// </summary>
+        /// <returns>The supported combinations</returns>
+        IEnumerable<SupportedIOCombination> GetSupportedIOCombinations();
+
         /// <summary>
         /// Register a new skill.
         /// </summary>

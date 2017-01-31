@@ -65,7 +65,8 @@
     <Compile Include="Types\APIRequest.cs" />
     <Compile Include="Types\DateRange.cs" />
     <Compile Include="Interactions\NetworkExecutor.cs" />
-    <Compile Include="Types\IOCombination.cs" />
+    <Compile Include="Types\MimeLanguage.cs" />
+    <Compile Include="Types\SupportedIOCombination.cs" />
     <Compile Include="Types\IOData.cs" />
     <Compile Include="Interactions\Intent.cs" />
     <Compile Include="Interactions\Skill.cs" />
