@@ -14,17 +14,18 @@
 namespace Limitless.Runtime.Enums
 {
     /// <summary>
-    /// The available directions for input.
+    /// Defines if a given IOProcessor should be
+    /// executed before or after the interaction engine.
     /// </summary>
-    public enum IODirection
+    public enum IOStage
     {
         /// <summary>
-        /// Input.
+        /// Executed before the interaction engine.
         /// </summary>
-        In,
+        PreProcessor,
         /// <summary>
-        /// Output.
+        /// Executed after the interaction engine.
         /// </summary>
-        Out
+        PostProcessor
     }
 }

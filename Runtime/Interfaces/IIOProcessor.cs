@@ -23,19 +23,18 @@ namespace Limitless.Runtime.Interfaces
     /// The interface required to be implemented by modules 
     /// that form part of the input/output pipelines.
     /// </summary>
-    public interface IIOProvider
+    public interface IIOProcessor
     {
         /// <summary>
         /// Get and sets the direction of the input/output provider.
         /// </summary>
-        IODirection Direction { get; set; }
+        IOStage Stage { get; set; }
         /// <summary>
         /// Gets the supported combination of input/output MIME types
         /// and languages.
         /// </summary>
         /// <returns>The supported combinations</returns>
         IEnumerable<SupportedIOCombination> GetSupportedIOCombinations();
-        /// TODO: Determine input and output types?
         /// <summary>
         /// Process the given data.
         /// </summary>
