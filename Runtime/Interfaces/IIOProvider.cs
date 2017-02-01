@@ -40,7 +40,8 @@ namespace Limitless.Runtime.Interfaces
         /// Process the given data.
         /// </summary>
         /// <param name="data">The data object to process</param>
+        /// <param name="preferredOutput">The preferred output Mime and language</param>
         /// <returns>The result of processing the data</returns>
-        IOData Process(IOData data);
+        IOData Process(IOData data, MimeLanguage preferredOutput);
     }
 }
