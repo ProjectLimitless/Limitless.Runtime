@@ -22,6 +22,9 @@ namespace Limitless.Runtime.Types
     /// </summary>
     public class DateRange
     {
+        private DateTime _start;
+        private DateTime _end;
+
         /// <summary>
         /// Gets and sets the start date.
         /// If only one date is given, start and end will return the same value.
@@ -31,14 +34,6 @@ namespace Limitless.Runtime.Types
         {
             get
             {
-                if (_start == null && _end == null)
-                {
-                    return DateTime.Now;
-                }
-                if (_start == null)
-                {
-                    return _end;
-                }
                 return _start;
             }
             set
@@ -60,15 +55,7 @@ namespace Limitless.Runtime.Types
         {
             get
             {
-                if (_start == null && _end == null)
-                {
-                    return DateTime.Now;
-                }
-                if (_end == null)
-                {
-                    return _start;
-                }
-                return _end;
+                return _end == null ? _start : _end;
             }
             set
             {
@@ -80,12 +67,9 @@ namespace Limitless.Runtime.Types
             }
         }
 
-        private DateTime _start;
-        private DateTime _end;
-
         /// <summary>
-        /// Creates a new instance and sets the start date
-        /// to DateTime.Now.
+        /// Creates a new instance of <see cref="DateRange"/> 
+        /// setting the Start data to DateTime.Now.
         /// </summary>
         public DateRange()
         {
@@ -93,7 +77,8 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Creates a new instance and sets the start date.
+        /// Creates a new instance of <see cref="DateRange"/> 
+        /// setting the start date.
         /// </summary>
         /// <param name="start">The start date</param>
         public DateRange(DateTime start)
@@ -102,7 +87,8 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Creates a new instance and sets the start and end dates.
+        /// Creates a new instance of <see cref="DateRange"/> 
+        /// setting the start and end dates.
         /// </summary>
         /// <param name="start">The start date</param>
         /// <param name="end">The end date</param>

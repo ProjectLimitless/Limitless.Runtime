@@ -69,7 +69,8 @@ namespace Limitless.Runtime.Interactions
         public dynamic Executor { get; set; }
 
         /// <summary>
-        /// Default constructor. Sets a default Guid UUID.
+        /// Creates a new <see cref="Skill"/> initializing UUID
+        /// to a new GUID.
         /// </summary>
         public Skill()
         {

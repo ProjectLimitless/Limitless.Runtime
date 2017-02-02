@@ -37,7 +37,8 @@ namespace Limitless.Runtime.Interactions
         public bool IsRequired { get; set; }
 
         /// <summary>
-        /// Constructor setting parameter name and type.
+        /// Creates a new instance of <see cref="SkillParameter"/> setting
+        /// the parameter and type.
         /// </summary>
         /// <param name="parameter">The name of the parameter</param>
         /// <param name="type">The type of the parameter. See <see cref="Limitless.Runtime.Enums.SkillParameterType"/></param>
@@ -49,7 +50,8 @@ namespace Limitless.Runtime.Interactions
         }
 
         /// <summary>
-        /// Constructor setting parameter name and type.
+        /// Creates a new instance of <see cref="SkillParameter"/> setting
+        /// the parameter, type and if it is required.
         /// </summary>
         /// <param name="parameter">The name of the parameter</param>
         /// <param name="type">The type of the parameter. See <see cref="Limitless.Runtime.Enums.SkillParameterType"/></param>
@@ -58,7 +60,7 @@ namespace Limitless.Runtime.Interactions
         {
             Parameter = parameter;
             Type = type;
-            IsRequired = IsRequired;
+            IsRequired = isRequired;
         }
     }
 }

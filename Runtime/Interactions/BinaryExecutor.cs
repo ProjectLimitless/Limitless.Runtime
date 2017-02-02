@@ -24,7 +24,7 @@ namespace Limitless.Runtime.Interactions
         /// <summary>
         /// The handling function taking a JSON string as
         /// input and returning a JSON string as output.
-        /// // TODO: If this documentation true?
+        /// // TODO: Is this documentation true?
         /// </summary>
         public Func<string, string> Handler;
     }

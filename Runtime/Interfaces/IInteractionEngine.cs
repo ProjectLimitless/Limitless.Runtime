@@ -11,7 +11,6 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
 using System.Collections.Generic;
 
 using Limitless.Runtime.Types;
@@ -51,9 +50,9 @@ namespace Limitless.Runtime.Interfaces
         /// <summary>
         /// Deregister a registered skill.
         /// </summary>
-        /// <param name="skillUUID">The skill's UUID to deregister</param>
+        /// <param name="skillUuid">The skill's UUID to deregister</param>
         /// <returns>true if deregistered, false otherwise</returns>
-        bool DeregisterSkill(string skillUUID);
+        bool DeregisterSkill(string skillUuid);
         /// <summary>
         /// Get a list of registered skills.
         /// </summary>

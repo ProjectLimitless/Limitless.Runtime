@@ -11,7 +11,6 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
 using System.Collections.Generic;
 
 namespace Limitless.Runtime.Types
@@ -48,7 +47,8 @@ namespace Limitless.Runtime.Types
         public bool IsAuthenticated { get; internal set; }
 
         /// <summary>
-        /// Constructor setting the username.
+        /// Create a new instance of <see cref="BaseUser"/>
+        /// setting the username.
         /// </summary>
         /// <param name="username">The username to set</param>
         public BaseUser(string username)
@@ -58,7 +58,8 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Constructor setting the username and authentication state.
+        /// Create a new instance of <see cref="BaseUser"/>
+        /// setting the username and is the user is authenticated.
         /// </summary>
         /// <param name="username">The username to set</param>
         /// <param name="isAuthenticated">The authentication state of the user</param>

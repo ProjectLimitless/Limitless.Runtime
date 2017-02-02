@@ -36,8 +36,8 @@ namespace Limitless.Runtime.Types
         public string ErrorResponse { get; set; }
 
         /// <summary>
-        /// Standard constructor specifying if login
-        /// was a success or not.
+        /// Creates a new <see cref="LoginResult"/> specifying
+        /// if the login was successful or not.
         /// </summary>
         /// <param name="success">true if login was a success, false otherwise</param>
         public LoginResult(bool success)
@@ -48,7 +48,7 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Standard constructor specifying if login
+        /// Creates a new <see cref="LoginResult"/> specifying if login
         /// was a success or not as well as the error response if false.
         /// </summary>
         /// <param name="success">true if login was a success, false otherwise</param>
@@ -65,7 +65,7 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Standard constructor specifying if login
+        /// Creates a new <see cref="LoginResult"/> specifying if login
         /// was a success or not as well as the user object.
         /// </summary>
         /// <param name="user">User data is login was a success</param>

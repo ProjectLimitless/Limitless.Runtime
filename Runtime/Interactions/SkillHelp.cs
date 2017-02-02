@@ -31,7 +31,8 @@ namespace Limitless.Runtime.Interactions
         public string ExamplePhrase { get; set; }
 
         /// <summary>
-        /// Standard constructor.
+        /// Creates a new instance of <see cref="SkillHelp"/> and
+        /// sets the 'Not provided' defaults.
         /// </summary>
         public SkillHelp()
         {

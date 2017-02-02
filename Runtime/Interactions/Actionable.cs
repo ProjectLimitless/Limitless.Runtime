@@ -13,7 +13,7 @@
 
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using Limitless.Runtime.Types;
 
 namespace Limitless.Runtime.Interactions
@@ -31,7 +31,7 @@ namespace Limitless.Runtime.Interactions
         public Skill Skill { get; set; }
         /// <summary>
         /// Extracted parameters from the input including
-        /// required parameters. See <see cref="Skill.Parameters"/>
+        /// required parameters. See <see cref="SkillParameter"/>
         /// </summary>
         public Dictionary<string, object> SkillParameters { get; set; }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Limitless.Runtime.Interactions
         public int Confidence { get; set; }
 
         /// <summary>
-        /// Standard constructor.
+        /// Creates a new instance of <see cref="Actionable"/>
         /// </summary>
         public Actionable()
         {
@@ -49,7 +49,8 @@ namespace Limitless.Runtime.Interactions
         }
 
         /// <summary>
-        /// Constructor setting the skill.
+        /// Creates a new instance of <see cref="Actionable"/> with
+        /// the skill set.
         /// </summary>
         /// <param name="skill">The matched skill</param>
         public Actionable(Skill skill)
@@ -58,10 +59,10 @@ namespace Limitless.Runtime.Interactions
             SkillParameters = new Dictionary<string, object>();
             Confidence = 0;
         }
-        
+
         /// <summary>
-        /// Constructor setting the matched skill,
-        /// and confidence in the match.
+        /// Creates a new instance of <see cref="Actionable"/> setting 
+        /// the matched skill and confidence in the match.
         /// </summary>
         /// <param name="skill">The matched skill</param>
         /// <param name="confidence">The confidence of the match</param>
@@ -80,14 +81,7 @@ namespace Limitless.Runtime.Interactions
         /// <returns>Returns true if a required parameter is missing, false otherwise</returns>
         public bool HasMissingParameters()
         {
-            foreach (SkillParameter parameter in this.Skill.Parameters)
-            {
-                if (this.SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return Skill.Parameters.Any(parameter => SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired);
         }
          
         /// <summary>
@@ -97,15 +91,7 @@ namespace Limitless.Runtime.Interactions
         /// <returns>The list of missing required parameters</returns>
         public List<SkillParameter> GetMissingParameters()
         {
-            List<SkillParameter> missingParameters = new List<SkillParameter>();
-            foreach (SkillParameter parameter in this.Skill.Parameters)
-            {
-                if (this.SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired)
-                {
-                    missingParameters.Add(parameter);
-                }
-            }
-            return missingParameters;
+            return Skill.Parameters.Where(parameter => SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired).ToList();
         }
 
         /// <summary>
@@ -115,15 +101,7 @@ namespace Limitless.Runtime.Interactions
         /// <returns>The list of parameters matching the given type</returns>
         public List<SkillParameter> GetParametersByType(string type)
         {
-            List<SkillParameter> parameters = new List<SkillParameter>();
-            foreach (SkillParameter parameter in this.Skill.Parameters)
-            {
-                if (parameter.Type == type)
-                {
-                    parameters.Add(parameter);
-                }
-            }
-            return parameters;
+            return Skill.Parameters.Where(parameter => parameter.Type == type).ToList();
         }
     }
 }

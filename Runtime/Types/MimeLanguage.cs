@@ -11,8 +11,6 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
-
 using Limitless.Runtime.Enums;
 
 namespace Limitless.Runtime.Types
@@ -37,7 +35,8 @@ namespace Limitless.Runtime.Types
         public string Language { get; set; }
         
         /// <summary>
-        /// Standard constructor.
+        /// Creates a new instance of <see cref="MimeLanguage"/>
+        /// and sets the defaults.
         /// </summary>
         public MimeLanguage()
         {
@@ -46,7 +45,8 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Constructor setting MIME and Language.
+        /// Creates a new instance of <see cref="MimeLanguage"/>
+        /// setting the provided MIME and Language.
         /// </summary>
         /// <param name="mime">The input MIME type</param>
         /// <param name="language">The input language</param>
@@ -62,7 +62,7 @@ namespace Limitless.Runtime.Types
         /// <returns>The string representation</returns>
         public override string ToString()
         {
-            return string.Format("[MIME: {0}, Language: {1}]", Mime, Language);
+            return $"[MIME: {Mime}, Language: {Language}]";
         }
     }
 }

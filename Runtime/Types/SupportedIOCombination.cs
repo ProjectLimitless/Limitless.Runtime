@@ -11,8 +11,6 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
-
 namespace Limitless.Runtime.Types
 {
     /// <summary>
@@ -30,9 +28,10 @@ namespace Limitless.Runtime.Types
         /// </summary>
         public MimeLanguage SupportedOutput { get; set; }
         
-
         /// <summary>
-        /// Standard constructor.
+        /// Creates a new <see cref="SupportedIOCombination"/>
+        /// and initializes the <see cref="SupportedInput"/> and
+        /// <see cref="SupportedOutput"/> properties.
         /// </summary>
         public SupportedIOCombination()
         {
@@ -41,7 +40,9 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Constructor setting the supported input combination.
+        /// Creates a new <see cref="SupportedIOCombination"/> setting 
+        /// the supported input combination and initializes the
+        /// <see cref="SupportedOutput"/> property.
         /// </summary>
         /// <param name="supportedInput">The supported input combination</param>
         public SupportedIOCombination(MimeLanguage supportedInput)
@@ -51,8 +52,8 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Constructor setting the supported input and output
-        /// combinations.
+        /// Creates a new <see cref="SupportedIOCombination"/> setting the 
+        /// supported input and output combinations.
         /// </summary>
         /// <param name="supportedInput">The supported input combination</param>
         /// <param name="supportedOutput">The supported ouput combination</param>

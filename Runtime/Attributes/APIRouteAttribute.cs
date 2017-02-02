@@ -29,7 +29,7 @@ namespace Limitless.Runtime.Attributes
         public HttpMethod Method { get; set; } = HttpMethod.Get;
         /// <summary>
         /// The route. See documentation on route formats at 
-        /// https://docs.projectlimitless.io/ProjectLimitless/api-routes
+        /// TODO: https://docs.projectlimitless.io/ProjectLimitless/api-routes
         /// </summary>
         public string Path { get; set; }
         /// <summary>

@@ -11,9 +11,6 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
-using System.Collections.Generic;
-
 namespace Limitless.Runtime.Types
 {
     /// <summary>
@@ -31,7 +28,7 @@ namespace Limitless.Runtime.Types
         public dynamic Data { get; set; }
 
         /// <summary>
-        /// Standard constructor with given MIME/Language.
+        /// Creates a new instance of <see cref="IOData"/> with given MIME/Language.
         /// </summary>
         /// <param name="mimeLanguage">The MIME/Language combination of the Data</param>
         public IOData(MimeLanguage mimeLanguage)
@@ -40,7 +37,7 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Standard constructor with given MIME/Language and Data.
+        /// Creates a new instance of <see cref="IOData"/>  with given MIME/Language and Data.
         /// </summary>
         /// <param name="mimeLanguage">The MIME/Language combination of the Data</param>
         /// <param name="data">The data</param>

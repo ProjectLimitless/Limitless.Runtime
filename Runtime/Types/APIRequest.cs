@@ -11,7 +11,6 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
 using System.Collections.Generic;
 
 namespace Limitless.Runtime.Types
@@ -43,7 +42,7 @@ namespace Limitless.Runtime.Types
         public BaseUser AuthenticatedUser { get; set; }
 
         /// <summary>
-        /// Standard constructor.
+        /// Creates a new <see cref="APIRequest"/> instance.
         /// </summary>
         public APIRequest()
         {

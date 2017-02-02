@@ -11,7 +11,6 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
 using System.Collections.Generic;
 
 namespace Limitless.Runtime.Types
@@ -42,7 +41,7 @@ namespace Limitless.Runtime.Types
         public dynamic Data { get; set; }
 
         /// <summary>
-        /// Standard constructor.
+        /// Creates a new <see cref="APIResponse"/> instance.
         /// </summary>
         public APIResponse()
         {
@@ -51,7 +50,8 @@ namespace Limitless.Runtime.Types
         }
 
         /// <summary>
-        /// Constructor with payload data.
+        /// Creates a new <see cref="APIResponse"/> instance
+        /// with payload data.
         /// </summary>
         /// <param name="data">The payload data</param>
         public APIResponse(dynamic data)

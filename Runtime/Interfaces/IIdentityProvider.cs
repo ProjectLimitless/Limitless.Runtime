@@ -11,11 +11,9 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
 using System.Collections.Generic;
 
 using Limitless.Runtime.Types;
-using Limitless.Runtime.Attributes;
 
 namespace Limitless.Runtime.Interfaces
 {
@@ -53,9 +51,9 @@ namespace Limitless.Runtime.Interfaces
         /// <returns>The response containing the user</returns>
         APIResponse View(dynamic id);
         /*
-        Create
-        Update
-        Delete
+        TODO: Create
+        TODO: Update
+        TODO: Delete
         */
     }
 }
