@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,7 @@
     <Compile Include="Enums\HttpMethod.cs" />
     <Compile Include="Interactions\Actionable.cs" />
     <Compile Include="Interactions\BinaryExecutor.cs" />
+    <Compile Include="Interactions\NetworkExecutorPayload.cs" />
     <Compile Include="Interactions\SkillParameter.cs" />
     <Compile Include="Interactions\SkillHelp.cs" />
     <Compile Include="Interfaces\ISkillExecutor.cs" />

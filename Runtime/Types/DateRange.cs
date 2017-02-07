@@ -12,6 +12,7 @@
 */
 
 using System;
+using System.Runtime.Serialization;
 
 namespace Limitless.Runtime.Types
 {
@@ -20,9 +21,12 @@ namespace Limitless.Runtime.Types
     /// If only one date is given, start and end will return the same value.
     /// If both are null, returns Now.
     /// </summary>
+    [DataContract]
     public class DateRange
     {
+        [IgnoreDataMember]
         private DateTime _start;
+        [IgnoreDataMember]
         private DateTime _end;
 
         /// <summary>
@@ -30,6 +34,7 @@ namespace Limitless.Runtime.Types
         /// If only one date is given, start and end will return the same value.
         /// If both are null, returns Now.
         /// </summary>
+        [DataMember]
         public DateTime Start
         {
             get
@@ -51,6 +56,7 @@ namespace Limitless.Runtime.Types
         /// If only one date is given, start and end will return the same value.
         /// If both are null, returns Now.
         /// </summary>
+        [DataMember]
         public DateTime End
         {
             get

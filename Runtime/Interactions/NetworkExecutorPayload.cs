@@ -12,20 +12,27 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 namespace Limitless.Runtime.Interactions
 {
     /// <summary>
-    /// A skill executor that is handled internally
-    /// or by a loaded module.
+    /// Holds all the data that should be sent to a
+    /// network skill executor.
     /// </summary>
-    public class BinaryExecutor
+    public class NetworkExecutorPayload
     {
         /// <summary>
-        /// The handling function taking an Actionably as
-        /// input and returning a JSON string as output.
-        /// // TODO: Is this documentation true?
+        /// The basic information of the matched skill.
         /// </summary>
-        public Func<string, Actionable> Handler;
+        public Skill Skill { get; set; }
+        /// <summary>
+        /// The parameters extracted from the input for the given SKill.
+        /// </summary>
+        public Dictionary<string, object> SkillParameters { get; set; }
+        /// <summary>
+        /// The user information, if needed.
+        /// </summary>
+        public dynamic User { get; set; }
     }
 }

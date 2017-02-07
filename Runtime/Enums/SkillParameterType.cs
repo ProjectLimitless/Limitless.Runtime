@@ -26,5 +26,7 @@ namespace Limitless.Runtime.Enums
         /// Dates with time.
         /// </summary>
         public const string DateRange = "date-range";
+
+        // TODO: Wherever these formats are parsed we need to load them into the Execute settings for the network executor
     }
 }
