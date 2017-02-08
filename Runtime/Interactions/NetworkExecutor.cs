@@ -12,13 +12,17 @@
 */
 
 using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Limitless.Runtime.Interfaces;
 using System.Runtime.Serialization.Json;
-using Limitless.Runtime.Enums;
+
 using Limitless.Runtime.Types;
+using Limitless.Runtime.Interfaces;
+using System.Net.Http;
+using System.Net.Security;
+using System.Text;
+using Limitless.Runtime.Enums;
 
 namespace Limitless.Runtime.Interactions
 {
@@ -41,6 +45,7 @@ namespace Limitless.Runtime.Interactions
         /// Implemented from interface
         /// <see cref="Limitless.Runtime.Interfaces.ISkillExecutor.Execute(Actionable)"/>
         /// </summary>
+        // TODO: Return result!!
         public void Execute(Actionable actionable)
         {
             Console.WriteLine($"EXECUUUUUTE to {Url} - {actionable.Skill.Name}!");
@@ -65,17 +70,30 @@ namespace Limitless.Runtime.Interactions
 
             // Calculate the signature of the payload based on the initial
             // skill's temporary private key
+            // TODO: Determine if private key / token is the best way
             if (actionable.Skill.PrivateKey != "")
             {   
                 Console.WriteLine("SIIIIGN!");
-
-                if (ValidateCertificate)
-                {
-                    // TODO: Check?
-                }
             }
 
             // Submit the matched skill with parameters to the network skill
+            var requestHandler = new WebRequestHandler();
+            if (ValidateCertificate == false)
+            {
+                // TODO: Check that this actually works
+                // Validation is turned off, most likely for self-signed certificates.
+                // Accept all certificates
+                requestHandler.ServerCertificateValidationCallback += (sender, certificate, chain, policyErrors) => true;
+            }
+            using (var client = new HttpClient(requestHandler))
+            {
+                var response = client.PostAsync(Url, new StringContent(payload, Encoding.UTF8, MimeType.Json));
+                if (response.Result.IsSuccessStatusCode)
+                {
+                    // TODO: handle response
+                }
+                
+            }
 
         }
     }
