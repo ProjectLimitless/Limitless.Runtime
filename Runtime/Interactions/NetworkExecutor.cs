@@ -52,7 +52,7 @@ namespace Limitless.Runtime.Interactions
 
             var networkExecutorPayload = new NetworkExecutorPayload
             {
-                Skill = actionable.Skill,
+                SkillUUID = actionable.Skill.UUID,
                 SkillParameters = actionable.SkillParameters
             };
             var ms = new MemoryStream();
@@ -75,7 +75,7 @@ namespace Limitless.Runtime.Interactions
             {   
                 Console.WriteLine("SIIIIGN!");
             }
-
+            Console.WriteLine(payload);
             // Submit the matched skill with parameters to the network skill
             var requestHandler = new WebRequestHandler();
             if (ValidateCertificate == false)

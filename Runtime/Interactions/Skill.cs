@@ -13,7 +13,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 
 namespace Limitless.Runtime.Interactions
 {
@@ -36,54 +35,46 @@ namespace Limitless.Runtime.Interactions
         /// <summary>
         /// A short description of the skill.
         /// </summary>
-        [IgnoreDataMember]
         public string ShortDescription { get; set; }
         /// <summary>
         /// The author of the skill.
         /// </summary>
-        [IgnoreDataMember]
         public string Author { get; set; }
         /// <summary>
         /// The help details for the skill.
         /// </summary>
-        [IgnoreDataMember]
         public SkillHelp Help { get; set; }
         /// <summary>
         /// The locations where the skill can be executed.
         /// </summary>
-        [IgnoreDataMember]
         public List<string> Locations { get; set; }
         /// <summary>
         /// The intent that will trigger this skill.
         /// </summary>
-        [IgnoreDataMember]
         public Intent Intent { get; set; }
         /// <summary>
         /// The parameters that form part of this skill. If they are marked
         /// as required and not provided, Limitless will ask for them without 
         /// the interaction engine's help.
         /// </summary>
-        [IgnoreDataMember]
         public List<SkillParameter> Parameters { get; set; }
         /// <summary>
         /// The <see cref="Limitless.Runtime.Enums.SkillExecutorBinding"/> of
         /// the Executor.
         /// </summary>
-        [IgnoreDataMember]
         public string Binding { get; set; }
         /// <summary>
         /// Defines the method for executing the skill.
         /// </summary>
-        [IgnoreDataMember]
         public dynamic Executor { get; set; }
         /// <summary>
         /// The temporary private key used to sign the
         /// skill events. Skills that initiate communication
         /// must include this in their requests.
+        /// TODO: Better way?
         /// </summary>
-        [IgnoreDataMember]
         public string PrivateKey { get; private set; }
-
+        
         /// <summary>
         /// Creates a new <see cref="Skill"/> initializing UUID
         /// to a new GUID.
@@ -107,5 +98,17 @@ namespace Limitless.Runtime.Interactions
         {
             PrivateKey = privateKey;
         }
+        
+        /*
+        public bool ShouldSerializeShortDescription => false;
+        public bool ShouldSerializeAuthor => false;
+        public bool ShouldSerializeHelp => false;
+        public bool ShouldSerializeLocations => false;
+        public bool ShouldSerializeIntent => false;
+        public bool ShouldSerializeParameters => false;
+        public bool ShouldSerializeBinding => false;
+        public bool ShouldSerializeExecutor => false;
+        public bool ShouldSerializePrivateKey => false;
+        */
     }
 }

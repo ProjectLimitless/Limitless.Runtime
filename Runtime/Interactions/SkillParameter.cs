@@ -37,6 +37,14 @@ namespace Limitless.Runtime.Interactions
         public bool IsRequired { get; set; }
 
         /// <summary>
+        /// Creates a new instance of <see cref="SkillParameter"/>.
+        /// </summary>
+        public SkillParameter()
+        {   
+            // The default constructor is needed for serialization
+        }
+
+        /// <summary>
         /// Creates a new instance of <see cref="SkillParameter"/> setting
         /// the parameter and type.
         /// </summary>

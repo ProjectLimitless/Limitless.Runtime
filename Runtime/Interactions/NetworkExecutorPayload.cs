@@ -23,9 +23,10 @@ namespace Limitless.Runtime.Interactions
     public class NetworkExecutorPayload
     {
         /// <summary>
-        /// The basic information of the matched skill.
+        /// The UUID of the skill. This is useful if the
+        /// skill endpoint handles multiple skills.
         /// </summary>
-        public Skill Skill { get; set; }
+        public string SkillUUID { get; set; }
         /// <summary>
         /// The parameters extracted from the input for the given SKill.
         /// </summary>
