@@ -67,14 +67,7 @@ namespace Limitless.Runtime.Interactions
             byte[] rawPayload = ms.ToArray();
             ms.Close();
             string payload = System.Text.Encoding.UTF8.GetString(rawPayload, 0, rawPayload.Length);
-
-            // Calculate the signature of the payload based on the initial
-            // skill's temporary private key
-            // TODO: Determine if private key / token is the best way
-            if (actionable.Skill.PrivateKey != "")
-            {   
-                Console.WriteLine("SIIIIGN!");
-            }
+            
             Console.WriteLine(payload);
             // Submit the matched skill with parameters to the network skill
             var requestHandler = new WebRequestHandler();

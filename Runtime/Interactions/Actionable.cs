@@ -11,11 +11,8 @@
 * Project Limitless. If not, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using Limitless.Runtime.Types;
+using System.Collections.Generic;
 
 namespace Limitless.Runtime.Interactions
 {
@@ -24,24 +21,20 @@ namespace Limitless.Runtime.Interactions
     /// from an intent that can be actioned by the
     /// interaction engine.
     /// </summary>
-    [DataContract]
     public class Actionable
     {
         /// <summary>
         /// Gets the matched skill.
         /// </summary>
-        [DataMember]
         public Skill Skill { get; set; }
         /// <summary>
         /// Extracted parameters from the input including
         /// required parameters. See <see cref="SkillParameter"/>
         /// </summary>
-        [DataMember]
         public Dictionary<string, object> SkillParameters { get; set; }
         /// <summary>
         /// Gets the confidence when matched.
         /// </summary>
-        [DataMember]
         public int Confidence { get; set; }
 
         /// <summary>

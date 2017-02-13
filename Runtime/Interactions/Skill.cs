@@ -67,13 +67,6 @@ namespace Limitless.Runtime.Interactions
         /// Defines the method for executing the skill.
         /// </summary>
         public dynamic Executor { get; set; }
-        /// <summary>
-        /// The temporary private key used to sign the
-        /// skill events. Skills that initiate communication
-        /// must include this in their requests.
-        /// TODO: Better way?
-        /// </summary>
-        public string PrivateKey { get; private set; }
         
         /// <summary>
         /// Creates a new <see cref="Skill"/> initializing UUID
@@ -86,17 +79,6 @@ namespace Limitless.Runtime.Interactions
             Locations = new List<string>();
             Help = new SkillHelp();
             Parameters = new List<SkillParameter>();
-            PrivateKey = "";
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Skill"/>, 
-        /// sets UUID to a new Guid and sets the private key.
-        /// </summary>
-        /// <param name="privateKey">The private key to use</param>
-        public Skill(string privateKey) : this()
-        {
-            PrivateKey = privateKey;
         }
         
         /*
@@ -106,9 +88,6 @@ namespace Limitless.Runtime.Interactions
         public bool ShouldSerializeLocations => false;
         public bool ShouldSerializeIntent => false;
         public bool ShouldSerializeParameters => false;
-        public bool ShouldSerializeBinding => false;
-        public bool ShouldSerializeExecutor => false;
-        public bool ShouldSerializePrivateKey => false;
         */
     }
 }
