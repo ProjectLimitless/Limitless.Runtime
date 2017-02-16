@@ -26,6 +26,7 @@ namespace Limitless.Runtime.Interfaces
         /// Execute the given actionable.
         /// </summary>
         /// <param name="actionable">The actionable to execute</param>
-        void Execute(Actionable actionable);
+        /// <returns>The result of the action</returns>
+        ActionableResult Execute(Actionable actionable);
     }
 }

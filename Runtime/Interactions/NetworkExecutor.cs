@@ -13,16 +13,17 @@
 
 using System;
 using System.IO;
+using System.Text;
+using System.Net.Http;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 
+using Limitless.Runtime.Enums;
 using Limitless.Runtime.Types;
 using Limitless.Runtime.Interfaces;
-using System.Net.Http;
-using System.Net.Security;
-using System.Text;
-using Limitless.Runtime.Enums;
 
 namespace Limitless.Runtime.Interactions
 {
@@ -39,17 +40,15 @@ namespace Limitless.Runtime.Interactions
         /// Should the certificate be validated for HTTPS calls. 
         /// Defaults to true;
         /// </summary>
+		/// TODO: This is not always set from Swagger API calls
         public bool ValidateCertificate { get; set; } = true;
 
         /// <summary>
         /// Implemented from interface
         /// <see cref="Limitless.Runtime.Interfaces.ISkillExecutor.Execute(Actionable)"/>
         /// </summary>
-        // TODO: Return result!!
-        public void Execute(Actionable actionable)
+        public ActionableResult Execute(Actionable actionable)
         {
-            Console.WriteLine($"EXECUUUUUTE to {Url} - {actionable.Skill.Name}!");
-
             var networkExecutorPayload = new NetworkExecutorPayload
             {
                 SkillUUID = actionable.Skill.UUID,
@@ -66,7 +65,7 @@ namespace Limitless.Runtime.Interactions
             serializer.WriteObject(ms, networkExecutorPayload);
             byte[] rawPayload = ms.ToArray();
             ms.Close();
-            string payload = System.Text.Encoding.UTF8.GetString(rawPayload, 0, rawPayload.Length);
+            string payload = Encoding.UTF8.GetString(rawPayload, 0, rawPayload.Length);
             
             Console.WriteLine(payload);
             // Submit the matched skill with parameters to the network skill
@@ -75,19 +74,24 @@ namespace Limitless.Runtime.Interactions
             {
                 // TODO: Check that this actually works
                 // Validation is turned off, most likely for self-signed certificates.
-                // Accept all certificates
+                // Accept all the certificates!
                 requestHandler.ServerCertificateValidationCallback += (sender, certificate, chain, policyErrors) => true;
             }
+            var actionableResult = new ActionableResult();
             using (var client = new HttpClient(requestHandler))
             {
                 var response = client.PostAsync(Url, new StringContent(payload, Encoding.UTF8, MimeType.Json));
-                if (response.Result.IsSuccessStatusCode)
+                if (!response.Result.IsSuccessStatusCode)
                 {
-                    // TODO: handle response
+                    throw new HttpRequestException(
+                        $"Error received from Network skill '{actionable.Skill.UUID} ({actionable.Skill.Name})'. Code {response.Result.StatusCode}");
                 }
-                
+                // TODO: Expand to more media types - not just string
+                actionableResult.Data = response.Result.Content.ReadAsStringAsync().Result;
+                actionableResult.ContentType = response.Result.Content.Headers.ContentType.MediaType;
+                actionableResult.ContentLanguage = response.Result.Content.Headers.ContentLanguage.First();
             }
-
+            return actionableResult;
         }
     }
 }
