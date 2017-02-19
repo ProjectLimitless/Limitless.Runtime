@@ -33,6 +33,10 @@ namespace Limitless.Runtime.Interactions
         /// </summary>
         public Dictionary<string, object> SkillParameters { get; set; }
         /// <summary>
+        /// The extracted location as registered by the skill.
+        /// </summary>
+        public string Location { get; set; }
+        /// <summary>
         /// Gets the confidence when matched.
         /// </summary>
         public int Confidence { get; set; }

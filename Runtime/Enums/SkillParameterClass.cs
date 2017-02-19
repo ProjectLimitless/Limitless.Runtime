@@ -14,19 +14,27 @@
 namespace Limitless.Runtime.Enums
 {
     /// <summary>
-    /// The allowed skill parameter types.
+    /// Skill parameter classes determine how the values will be 
+    /// extracted from the given input.
     /// </summary>
-    public static class SkillParameterType
+    public static class SkillParameterClass
     {
         /// <summary>
-        /// An integer larger of equal to zero.
+        /// A decimal value should be extracted.
         /// </summary>
-        public const string Integer = "int";
+        public const string DecimalValue = "value-decimal";
         /// <summary>
-        /// Dates with time.
+        /// An integer value should be extracted. 
+        /// </summary>
+        public const string IntegerValue = "value-integer";
+        /// <summary>
+        /// A quantity should be extracted. Examples like 
+        /// 'a little bit of', 'just a bit', etc.
+        /// </summary>
+        public const string Quantity = "quantity";
+        /// <summary>
+        /// Dates with time should be extracted.
         /// </summary>
         public const string DateRange = "date-range";
-
-        // TODO: Wherever these formats are parsed we need to load them into the Execute settings for the network executor
     }
 }

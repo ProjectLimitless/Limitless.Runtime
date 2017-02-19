@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="Attributes\APIRouteAttribute.cs" />
     <Compile Include="Enums\IOStage.cs" />
-    <Compile Include="Enums\SkillParameterType.cs" />
+    <Compile Include="Enums\SkillParameterClass.cs" />
     <Compile Include="Enums\LogLevel.cs" />
     <Compile Include="Enums\SkillExecutorBinding.cs" />
     <Compile Include="Enums\MimeType.cs" />
