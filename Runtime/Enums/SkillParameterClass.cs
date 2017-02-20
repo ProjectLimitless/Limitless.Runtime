@@ -36,5 +36,9 @@ namespace Limitless.Runtime.Enums
         /// Dates with time should be extracted.
         /// </summary>
         public const string DateRange = "date-range";
+        /// <summary>
+        /// Locations should be extracted.
+        /// </summary>
+        public const string Location = "location";
     }
 }

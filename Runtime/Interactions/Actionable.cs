@@ -76,6 +76,23 @@ namespace Limitless.Runtime.Interactions
         }
 
         /// <summary>
+        /// Adds a new required parameter to the skill after
+        /// registration.
+        /// </summary>
+        /// <param name="parameter">The <see cref="SkillParameter"/> to add</param>
+        /// <returns>true if added, false otherwise</returns>
+        public bool AddDynamicParameter(SkillParameter parameter)
+        {
+            if (Skill.Parameters.Any(x => x.Parameter == parameter.Parameter))
+            {
+                return false;
+            }
+            parameter.IsRequired = true;
+            Skill.Parameters.Insert(0, parameter);
+            return true;
+        }
+
+        /// <summary>
         /// Checks if all the required parameters for
         /// a <see cref="Skill"/> has been extracted into
         /// SkillParameters.
@@ -95,11 +112,11 @@ namespace Limitless.Runtime.Interactions
         {
             return Skill.Parameters.Where(parameter => SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired).ToList();
         }
-
+        
         /// <summary>
         /// Gets a list of parameters of a specific type.
         /// </summary>
-        /// <param name="type">The <see cref="Limitless.Runtime.Enums.SkillParameterType"/></param>
+        /// <param name="type">The <see cref="Limitless.Runtime.Enums.SkillParameterClass"/></param>
         /// <returns>The list of parameters matching the given type</returns>
         public List<SkillParameter> GetParametersByType(string type)
         {
