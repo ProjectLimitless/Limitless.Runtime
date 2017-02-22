@@ -26,11 +26,11 @@ namespace Limitless.Runtime.Interactions
         /// </summary>
         public string Parameter { get; set; }
         /// <summary>
-        /// The type of data expected.
-        /// See <see cref="Limitless.Runtime.Enums.SkillParameterType"/> 
+        /// The class of data expected.
+        /// See <see cref="Limitless.Runtime.Enums.SkillParameterClass"/> 
         /// for available types.
         /// </summary>
-        public string Type { get; set; }
+        public string ClassType { get; set; }
         /// <summary>
         /// Is this parameter required or optional. Default to true.
         /// </summary>
@@ -49,11 +49,11 @@ namespace Limitless.Runtime.Interactions
         /// the parameter and type.
         /// </summary>
         /// <param name="parameter">The name of the parameter</param>
-        /// <param name="type">The type of the parameter. See <see cref="Limitless.Runtime.Enums.SkillParameterType"/></param>
-        public SkillParameter(string parameter, string type)
+        /// <param name="classType">The class of the parameter. See <see cref="Limitless.Runtime.Enums.SkillParameterClass"/></param>
+        public SkillParameter(string parameter, string classType)
         {
             Parameter = parameter;
-            Type = type;
+            ClassType = classType;
             IsRequired = true;
         }
 
@@ -62,12 +62,12 @@ namespace Limitless.Runtime.Interactions
         /// the parameter, type and if it is required.
         /// </summary>
         /// <param name="parameter">The name of the parameter</param>
-        /// <param name="type">The type of the parameter. See <see cref="Limitless.Runtime.Enums.SkillParameterType"/></param>
+        /// <param name="classType">The class of the parameter. See <see cref="Limitless.Runtime.Enums.SkillParameterClass"/></param>
         /// <param name="isRequired">Is this parameter required or optional</param>
-        public SkillParameter(string parameter, string type, bool isRequired)
+        public SkillParameter(string parameter, string classType, bool isRequired)
         {
             Parameter = parameter;
-            Type = type;
+            ClassType = classType;
             IsRequired = isRequired;
         }
     }

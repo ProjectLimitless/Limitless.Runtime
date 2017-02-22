@@ -33,6 +33,10 @@ namespace Limitless.Runtime.Interactions
         /// </summary>
         public Dictionary<string, object> SkillParameters { get; set; }
         /// <summary>
+        /// Parameters that should be queried, or asked, for.
+        /// </summary>
+        public List<SkillParameter> QueriedParameters { get; set; }
+        /// <summary>
         /// The extracted location as registered by the skill.
         /// </summary>
         public string Location { get; set; }
@@ -46,8 +50,9 @@ namespace Limitless.Runtime.Interactions
         /// </summary>
         public Actionable()
         {
-            SkillParameters = new Dictionary<string, object>();
             Confidence = 0;
+            QueriedParameters = new List<SkillParameter>();
+            SkillParameters = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -58,8 +63,9 @@ namespace Limitless.Runtime.Interactions
         public Actionable(Skill skill)
         {
             Skill = skill;
-            SkillParameters = new Dictionary<string, object>();
             Confidence = 0;
+            QueriedParameters = new List<SkillParameter>();
+            SkillParameters = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -71,8 +77,9 @@ namespace Limitless.Runtime.Interactions
         public Actionable(Skill skill, int confidence)
         {
             Skill = skill;
-            SkillParameters = new Dictionary<string, object>();
             Confidence = confidence;
+            QueriedParameters = new List<SkillParameter>();
+            SkillParameters = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -81,14 +88,14 @@ namespace Limitless.Runtime.Interactions
         /// </summary>
         /// <param name="parameter">The <see cref="SkillParameter"/> to add</param>
         /// <returns>true if added, false otherwise</returns>
-        public bool AddDynamicParameter(SkillParameter parameter)
+        public bool AddQueryParameter(SkillParameter parameter)
         {
-            if (Skill.Parameters.Any(x => x.Parameter == parameter.Parameter))
+            if (QueriedParameters.Any(x => x.Parameter == parameter.Parameter))
             {
                 return false;
             }
             parameter.IsRequired = true;
-            Skill.Parameters.Insert(0, parameter);
+            QueriedParameters.Insert(0, parameter);
             return true;
         }
 
@@ -112,15 +119,24 @@ namespace Limitless.Runtime.Interactions
         {
             return Skill.Parameters.Where(parameter => SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired).ToList();
         }
-        
+
+        /// <summary>
+        /// Returns the list of dynamically added parameters.
+        /// </summary>
+        /// <returns>The list of parameters being queried</returns>
+        public List<SkillParameter> GetQueriedParameters()
+        {
+            return QueriedParameters;
+        }
+
         /// <summary>
         /// Gets a list of parameters of a specific type.
         /// </summary>
-        /// <param name="type">The <see cref="Limitless.Runtime.Enums.SkillParameterClass"/></param>
+        /// <param name="classType">The <see cref="Limitless.Runtime.Enums.SkillParameterClass"/></param>
         /// <returns>The list of parameters matching the given type</returns>
-        public List<SkillParameter> GetParametersByType(string type)
+        public List<SkillParameter> GetParametersByClass(string classType)
         {
-            return Skill.Parameters.Where(parameter => parameter.Type == type).ToList();
+            return Skill.Parameters.Where(parameter => parameter.ClassType == classType).ToList();
         }
     }
 }
