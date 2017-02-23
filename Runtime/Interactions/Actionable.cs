@@ -107,7 +107,9 @@ namespace Limitless.Runtime.Interactions
         /// <returns>Returns true if a required parameter is missing, false otherwise</returns>
         public bool HasMissingParameters()
         {
-            return Skill.Parameters.Any(parameter => SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired);
+            return 
+                Skill.Parameters.Any(parameter => SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired) || 
+                QueriedParameters.Any();
         }
          
         /// <summary>
@@ -117,7 +119,10 @@ namespace Limitless.Runtime.Interactions
         /// <returns>The list of missing required parameters</returns>
         public List<SkillParameter> GetMissingParameters()
         {
-            return Skill.Parameters.Where(parameter => SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired).ToList();
+            var missingParameters = new List<SkillParameter>();
+            missingParameters.AddRange(QueriedParameters);
+            missingParameters.AddRange(Skill.Parameters.Where(parameter => SkillParameters.ContainsKey(parameter.Parameter) == false && parameter.IsRequired).ToList());
+            return missingParameters;
         }
 
         /// <summary>

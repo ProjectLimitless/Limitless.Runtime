@@ -20,10 +20,6 @@ namespace Limitless.Runtime.Enums
     public static class SkillParameterClass
     {
         /// <summary>
-        /// A decimal value should be extracted.
-        /// </summary>
-        public const string DecimalValue = "value-decimal";
-        /// <summary>
         /// An integer value should be extracted. 
         /// </summary>
         public const string IntegerValue = "value-integer";
