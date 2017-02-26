@@ -41,13 +41,19 @@ namespace Limitless.Runtime.Interactions
         /// </summary>
         public string Author { get; set; }
         /// <summary>
+        /// The class of the skill. 
+        /// The classes available is determined 
+        /// by the interaction engine loaded.
+        /// </summary>
+        public string Class { get; set; }
+        /// <summary>
         /// The help details for the skill.
         /// </summary>
         public SkillHelp Help { get; set; }
         /// <summary>
         /// The locations where the skill can be executed.
         /// </summary>
-        public List<string> Locations { get; set; }
+        public List<string> InstalledLocations { get; set; }
         /// <summary>
         /// The intent that will trigger this skill.
         /// </summary>
@@ -76,7 +82,7 @@ namespace Limitless.Runtime.Interactions
         {
             UUID = Guid.NewGuid().ToString();
             Intent = new Intent();
-            Locations = new List<string>();
+            InstalledLocations = new List<string>();
             Help = new SkillHelp();
             Parameters = new List<SkillParameter>();
         }

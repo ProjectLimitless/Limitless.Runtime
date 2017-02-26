@@ -33,8 +33,12 @@ namespace Limitless.Runtime.Enums
         /// </summary>
         public const string DateRange = "date-range";
         /// <summary>
-        /// Locations should be extracted.
+        /// An exact, case insensitive, string match.
         /// </summary>
-        public const string Location = "location";
+        public const string StringPhrase = "string-phrase";
+        /// <summary>
+        /// For determining the installed location, used internally.
+        /// </summary>
+        public const string InstalledLocation = "installed-location";
     }
 }
